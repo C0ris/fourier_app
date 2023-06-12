@@ -88,11 +88,13 @@ def main():
         draw(ax, x1, x2, x3, x4, f1(x1), f2(x2), -f2(x3) if t == 2 else f2(x3), f1(x4) if t == 2 else f4(x4))
     x = np.arange(-3, 3, 0.01)
     ax.plot(x, sigma(x, n, t))
-
+    # print(a0(1), a0(2), a0(3))
     ax.set(xlabel="x", ylabel="y", title=f"График функции и ряд Фурье (n = {n}, " +
                                          f"{'общий' if t == 1 else ('по синусам'if t == 2 else 'по косинусам')})")
+    # ax.set(xlabel="x", ylabel="y", title=f'График функции, продолженной нечетным образом')
     ax.grid()
     plt.savefig(f"fig_{t}_{n}.png")
+    # plt.savefig("fig.png")
     plt.show()
 
 
